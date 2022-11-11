@@ -1,8 +1,14 @@
 import React, {useState} from 'react';
-import {UserMutation} from "../../types.d";
+import {User, UserMutation} from "../../types.d";
+import './UserForm.css';
+import {nanoid} from "nanoid";
 
 
-const UserForm = () => {
+interface Props {
+    onSubmit: (user: User) => void;
+}
+
+const UserForm: React.FC<Props> = ({onSubmit}) => {
     const [user, setUser] = useState<UserMutation>({
         name: '',
         email: '',
@@ -21,8 +27,12 @@ const UserForm = () => {
 
     const onFormSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        console.log(user)
+        onSubmit({
+            id: nanoid(),
+            ...user,
+        });
     };
+
     return (
         <form onSubmit={onFormSubmit} className="Form">
             <h4>Add new User <i className="bi bi-person-plus-fill px-5"></i></h4>
