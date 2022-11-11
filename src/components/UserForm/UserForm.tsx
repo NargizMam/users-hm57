@@ -31,6 +31,11 @@ const UserForm: React.FC<Props> = ({onSubmit}) => {
             id: nanoid(),
             ...user,
         });
+        setUser({
+            name: '',
+            email: '',
+            isActive: false,
+            role: 'Choose role'})
     };
 
     return (
@@ -70,12 +75,12 @@ const UserForm: React.FC<Props> = ({onSubmit}) => {
                     </label>
             </div>
             <div className="form-group">
-                <label htmlFor="role">Role</label>
                 <div>
                     <select className="form-select" name="role" id="role"
                             required
                             onChange={onUserChange}
                     >
+                        <option disabled  selected value="">Choose role</option>
                         <option>User</option>
                         <option>Editor</option>
                         <option>Admin</option>

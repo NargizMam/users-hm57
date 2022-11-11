@@ -1,0 +1,8 @@
+.is-active {
+    border-bottom: 3px dotted green ;
+}
+.card-body{
+    box-shadow: orange  0 .3rem 1rem;
+    background: rgb(255, 207, 110)
+    /*background: linear-gradient(0deg, rgba(34,193,195,0.8603816526610644) 0%, rgba(253,187,45,1) 73%);*/
+}

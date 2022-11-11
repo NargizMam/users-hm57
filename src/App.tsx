@@ -3,6 +3,8 @@ import Navbar from "./components/Navbar/Navbar";
 import UserForm from "./components/UserForm/UserForm";
 import Users from "./components/Users/Users";
 import {User} from "./types.d";
+import './App.css';
+
 
 function App() {
     const [users, setUsers] = useState<User[]>([]);
@@ -12,7 +14,7 @@ function App() {
     };
 
   return (
-      <div>
+      <div className="background">
         <header>
           <Navbar/>
         </header>
